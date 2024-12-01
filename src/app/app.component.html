@@ -1,14 +1,8 @@
 <div class="progress-wrapper">
   <div id="progress-bar-container">
     <ul>
-      <li class="step step01 active">
-        <div class="step-inner">Step 1</div>
-      </li>
-      <li class="step step02">
-        <div class="step-inner">Step 2</div>
-      </li>
-      <li class="step step03">
-        <div class="step-inner">Step 3</div>
+      <li class="step step01 active" *ngFor="let step of stepList">
+        <div class="step-inner">{{step.stepName}}</div>
       </li>
     </ul>
     <div id="line">
