@@ -14,5 +14,12 @@ export class AppComponent {
     { stepName: 'Basic Details', isComplete: false },
     { stepName: 'Skills', isComplete: false },
     { stepName: 'Experience', isComplete: false },
-  ]
+  ];
+
+  // Initalize first step to activeStep
+  activeStep: any = this.stepList[0];
+
+  setActiveStep(activeStep: any) {
+    this.activeStep = activeStep;
+  }
 }

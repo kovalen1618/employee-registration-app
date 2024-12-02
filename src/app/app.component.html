@@ -1,7 +1,8 @@
 <div class="progress-wrapper">
   <div id="progress-bar-container">
     <ul>
-      <li class="step step01 active" *ngFor="let step of stepList">
+      <li class="step step01" (click)="setActiveStep(step)"
+        [ngClass]="step.stepName === activeStep.stepName ? 'active' : ''" *ngFor="let step of stepList">
         <div class="step-inner">{{step.stepName}}</div>
       </li>
     </ul>
@@ -10,7 +11,7 @@
     </div>
     <!-- progress-bar-container -->
     <div id="progress-content-section">
-      <div class="section-content step1 active">
+      <div class="section-content step1 active" *ngIf="activeStep.stepName === 'Basic Details'">
         <h2>Step 1</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,
@@ -18,7 +19,7 @@
           aliquam ratione porro minus temporibus facilis iure numquam.
         </p>
       </div>
-      <div class="section-content step2">
+      <div class="section-content step2 active" *ngIf="activeStep.stepName === 'Skills'">
         <h2>Step 2</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,
@@ -29,7 +30,7 @@
           aliquam ratione porro minus temporibus facilis iure numquam.
         </p>
       </div>
-      <div class="section-content step3">
+      <div class="section-content step3 active" *ngIf="activeStep.stepName === 'Experience'">
         <h2>Step 3</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,
